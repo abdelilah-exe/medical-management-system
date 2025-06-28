@@ -1,0 +1,18 @@
+# ----------------------------------------
+#       Fichiers/dossiers à ignorer
+# ----------------------------------------
+# Dossier de build local
+build/
+
+# Fichiers compilés
+*.class
+
+# Dossier privé NetBeans (propre à la machine)
+nbproject/private/
+
+# Les fichiers .jar
+*.jar
+
+# Fichiers temporaires
+*.log
+*~

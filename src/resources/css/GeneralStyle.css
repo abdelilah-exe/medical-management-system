@@ -1,0 +1,237 @@
+/* Style général */
+.root {
+    -fx-font-family: 'Segoe UI', Arial, sans-serif;
+    -fx-font-size: 13px;
+}
+
+/* Style pour la barre latérale */
+.sidebar {
+    -fx-background-color: white;
+}
+
+/* Style pour les boutons du menu */
+.menu-button {
+    -fx-background-color: white;
+    -fx-background-radius: 5px;
+    -fx-text-fill: black;
+    -fx-alignment: CENTER-LEFT;
+    -fx-cursor: hand;
+}
+
+.menu-button:hover {
+    -fx-background-color: #f0f0f0;
+}
+
+.menu-button-active {
+    -fx-background-color: #eaeaea;
+    -fx-background-radius: 5px;
+    -fx-text-fill: black;
+    -fx-alignment: CENTER-LEFT;
+    -fx-cursor: hand;
+}
+
+/* Style pour les boutons et contrôles */
+.button {
+    -fx-cursor: hand;
+}
+
+.table-view {
+    -fx-background-color: white;
+    -fx-border-color: #E0E0E0;
+    -fx-border-radius: 8px;
+    -fx-border-width: 1px;
+}
+
+/* Style pour les checkboxes des tableaux */
+.table-view .check-box > .box,
+.table-view .column-header .check-box > .box {
+    -fx-background-color: white;
+    -fx-border-color: #E0E0E0;
+    -fx-border-radius: 3;
+    -fx-background-radius: 3;
+}
+
+.table-view .check-box:hover > .box,
+.table-view .column-header .check-box:hover > .box {
+    -fx-border-color: #999999;
+}
+
+.table-view .check-box:selected > .box,
+.table-view .column-header .check-box:selected > .box {
+    -fx-background-color: #14ae5c;
+    -fx-border-color: #2196f3;
+}
+
+.table-view .check-box:selected > .box > .mark,
+.table-view .column-header .check-box:selected > .box > .mark {
+    -fx-background-color: white;
+}
+
+.table-view .column-header {
+    -fx-background-color: #F8F8F8;
+    -fx-border-color: #E0E0E0;
+    -fx-border-width: 0 0 1px 0;
+    -fx-padding: 10px;
+}
+
+/* Style pour les tableaux */
+.table-view .table-cell {
+    -fx-padding: 10px;
+    -fx-alignment: CENTER;
+}
+
+.table-row-cell {
+    -fx-background-color: white;
+}
+
+.table-row-cell:odd {
+    -fx-background-color: #FAFAFA;
+}
+
+.table-row-cell:selected {
+    -fx-background-color: #14ae5c;
+}
+
+/* Style pour les champs de saisie */
+.text-field {
+    -fx-background-color: white;
+    -fx-border-color: #E0E0E0;
+    -fx-border-radius: 8px;
+}
+
+.text-field:focused {
+    -fx-border-color: #2196F3;
+}
+
+/* Style pour les DatePickers */
+.date-picker {
+    -fx-background-color: white;
+    -fx-border-color: #E0E0E0;
+    -fx-border-radius: 8;
+    -fx-background-radius: 8;
+    -fx-padding: 0;
+}
+
+.date-picker > .arrow-button {
+    -fx-background-color: transparent;
+    -fx-background-radius: 8;
+}
+
+.date-picker > .text-field {
+    -fx-background-color: white;
+    -fx-background-radius: 8;
+    -fx-border-radius: 8;
+}
+
+.radio-button > .radio {
+    -fx-background-color: white;
+    -fx-border-color: lightgray;
+    -fx-border-radius: 50%;
+    -fx-background-radius: 50%;
+    -fx-padding: 4px;
+}
+
+/* Style pour les checkboxes de login et register */
+.password-toggle-checkbox > .box {
+    -fx-background-color: white;
+    -fx-background-radius: 3;
+    -fx-border-color: lightgray;
+    -fx-border-radius: 3;
+}
+
+.password-toggle-checkbox:hover > .box {
+    -fx-border-color: #999999;
+}
+
+.password-toggle-checkbox:selected > .box {
+    -fx-background-color: #14ae5c;
+    -fx-border-color: #2196f3;
+}
+
+.password-toggle-checkbox:selected > .box > .mark {
+    -fx-background-color: white;
+}
+
+
+.password-toggle-checkbox {
+    -fx-font-size: 13px;
+    -fx-text-fill: #333;
+}
+
+/* Style pour les ComboBoxes*/
+.combo-box {
+    -fx-background-color: white;
+    -fx-border-color: #E0E0E0;
+    -fx-border-radius: 3;
+    -fx-background-radius: 3;
+    -fx-padding: 5px;
+}
+
+.combo-box .arrow-button {
+    -fx-background-color: transparent;
+    -fx-border-color: transparent;
+}
+
+.combo-box .list-cell {
+    -fx-background-color: white;
+    -fx-text-fill: #333333;
+}
+
+.combo-box .list-cell:hover {
+    -fx-background-color: #f2f2f2;
+}
+
+.combo-box .combo-box-popup {
+    -fx-background-color: white;
+    -fx-border-color: #E0E0E0;
+    -fx-border-radius: 3;
+}
+
+/* Style pour les boutons d'action */
+.export-button {
+    -fx-background-color: #333333;
+    -fx-padding: 6px;
+    -fx-text-fill: white;
+    -fx-background-radius: 8px;
+    -fx-border-radius: 8px;
+    -fx-cursor: hand;
+}
+
+.export-button:hover {
+    -fx-background-color: #33C85B;
+}
+
+.action-button {
+    -fx-background-color: #333333;
+    -fx-text-fill: white;
+    -fx-background-radius: 8px;
+    -fx-border-radius: 8px;
+    -fx-cursor: hand;
+}
+
+.action-button:hover {
+    -fx-background-color: #444444; /* Slightly lighter on hover */
+}
+
+.confirm-button {
+    -fx-background-color: #33C85B;
+    -fx-text-fill: white;
+    -fx-border-radius: 8px;
+    -fx-background-radius: 8px;
+}
+
+.confirm-button:hover {
+    -fx-background-color: #34A853;
+}
+
+/* Style pour le bouton d'annulation */
+.cancel-button {
+    -fx-background-color: #ec221f;
+    -fx-text-fill: white;
+    -fx-border-radius: 8px;
+    -fx-background-radius: 8px;
+}
+
+.cancel-button:hover {
+    -fx-background-color: #c00f0c;
+}

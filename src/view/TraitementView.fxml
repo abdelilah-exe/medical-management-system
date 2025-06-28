@@ -1,0 +1,400 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Region?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+
+<BorderPane fx:id="mainBorderPane" prefHeight="600.0" prefWidth="900.0" stylesheets="@../resources/css/GeneralStyle.css" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.TraitementController">
+    
+    <!-- Menu latéral -->
+    <left>
+        <VBox prefWidth="220.0" spacing="5.0" style="-fx-background-color: white; -fx-border-color: #E0E0E0; -fx-border-width: 0 1px 0 0;" styleClass="sidebar">
+            <padding>
+                <Insets bottom="20.0" left="10.0" right="10.0" top="20.0" />
+            </padding>
+            
+            <Label style="-fx-font-size: 18px; -fx-font-weight: bold;" text="MediConnect">
+            <graphic>
+               <ImageView fitHeight="51.0" fitWidth="60.0" pickOnBounds="true" preserveRatio="true">
+                  <image>
+                     <Image url="@../resources/icons/MCAppLogo60x51_2.png" />
+                  </image>
+               </ImageView>
+            </graphic></Label>
+            
+            <Label style="-fx-font-size: 14px; -fx-text-fill: #777777;" text="Menu">
+                <VBox.margin>
+                    <Insets bottom="5.0" top="15.0" />
+                </VBox.margin>
+            </Label>
+            
+            <Button fx:id="btnAccueil" onAction="#handleAccueilClick" prefWidth="200.0" style="-fx-text-fill: black; -fx-background-color: white; -fx-alignment: CENTER-LEFT;" styleClass="menu-button" text="Accueil">
+                <graphic>
+                    <ImageView fitHeight="16" fitWidth="16" preserveRatio="true">
+                        <Image url="@../resources/icons/Home.png" />
+                    </ImageView>
+                </graphic>
+                <padding>
+                    <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                </padding>
+            </Button>
+            
+            <Button fx:id="btnPatients" onAction="#handlePatientsClick" prefWidth="200.0" style="-fx-text-fill: black; -fx-background-color: white; -fx-alignment: CENTER-LEFT;" styleClass="menu-button" text="Patients">
+                <graphic>
+                    <ImageView fitHeight="16" fitWidth="16" preserveRatio="true">
+                        <Image url="@../resources/icons/Users.png" />
+                    </ImageView>
+                </graphic>
+                <padding>
+                    <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                </padding>
+            </Button>
+            
+            <Button fx:id="btnTraitements" onAction="#handleTraitementsClick" prefWidth="200.0" style="-fx-text-fill: black; -fx-background-color: #f0f0f0; -fx-alignment: CENTER-LEFT;" styleClass="menu-button-active" text="Traitements">
+                <graphic>
+                    <ImageView fitHeight="16" fitWidth="16" preserveRatio="true">
+                        <Image url="@../resources/icons/List.png" />
+                    </ImageView>
+                </graphic>
+                <padding>
+                    <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                </padding>
+            </Button>
+            
+            <Button fx:id="btnRendezVous" onAction="#handleRendezVousClick" prefWidth="200.0" style="-fx-text-fill: black; -fx-background-color: white; -fx-alignment: CENTER-LEFT;" styleClass="menu-button" text="Rendez-vous">
+                <graphic>
+                    <ImageView fitHeight="16" fitWidth="16" preserveRatio="true">
+                        <Image url="@../resources/icons/Calendar.png" />
+                    </ImageView>
+                </graphic>
+                <padding>
+                    <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                </padding>
+            </Button>
+            
+            <Button fx:id="btnStatistiques" onAction="#handleStatistiquesClick" prefWidth="200.0" style="-fx-text-fill: black; -fx-background-color: white; -fx-alignment: CENTER-LEFT;" styleClass="menu-button" text="Statistiques">
+                <graphic>
+                    <ImageView fitHeight="16" fitWidth="16" preserveRatio="true">
+                        <Image url="@../resources/icons/Bar%20chart-2.png" />
+                    </ImageView>
+                </graphic>
+                <padding>
+                    <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                </padding>
+            </Button>
+            
+            <Label style="-fx-font-size: 14px; -fx-text-fill: #777777;" text="Aide et paramètres">
+                <VBox.margin>
+                    <Insets bottom="5.0" top="20.0" />
+                </VBox.margin>
+            </Label>
+            
+            <Button fx:id="btnParametres" onAction="#handleParametresClick" prefWidth="200.0" style="-fx-text-fill: black; -fx-background-color: white; -fx-alignment: CENTER-LEFT;" styleClass="menu-button" text="Paramètres">
+                <graphic>
+                    <ImageView fitHeight="16" fitWidth="16" preserveRatio="true">
+                        <Image url="@../resources/icons/Settings.png" />
+                    </ImageView>
+                </graphic>
+                <padding>
+                    <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                </padding>
+            </Button>
+            
+            <Button fx:id="btnAide" onAction="#handleAideClick" prefWidth="200.0" style="-fx-text-fill: black; -fx-background-color: white; -fx-alignment: CENTER-LEFT;" styleClass="menu-button" text="Aide">
+                <graphic>
+                    <ImageView fitHeight="16" fitWidth="16" preserveRatio="true">
+                        <Image url="@../resources/icons/Info.png" />
+                    </ImageView>
+                </graphic>
+                <padding>
+                    <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                </padding>
+            </Button>
+        </VBox>
+    </left>
+    
+    <!-- Contenu principal -->
+    <center>
+        <StackPane fx:id="contentArea">
+            <!-- Vue principale des traitements -->
+            <VBox fx:id="traitementsListView">
+                <HBox alignment="CENTER_LEFT" style="-fx-background-color: white; -fx-border-color: #E0E0E0; -fx-border-width: 0 0 1px 0;">
+                    <padding>
+                        <Insets bottom="10.0" left="20.0" right="20.0" top="10.0" />
+                    </padding>
+                    <Label style="-fx-font-size: 24px; -fx-font-weight: bold;" text="Traitements" />
+                    <Region HBox.hgrow="ALWAYS" />
+                    <Button fx:id="btnExporter" onAction="#handleExportPatientsCSV" styleClass="export-button" text="Exporter">
+                        <graphic>
+                            <ImageView fitHeight="16" fitWidth="16" preserveRatio="true">
+                                <Image url="@../resources/icons/Upload.png" />
+                            </ImageView>
+                        </graphic>
+                    </Button>
+                </HBox>
+                <!-- Contenu de la section des Traitements -->
+                <VBox style="-fx-background-color: #F8F8F8;" VBox.vgrow="ALWAYS">
+                    <padding>
+                        <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+                    </padding>
+                    <VBox style="-fx-background-color: white; -fx-background-radius: 5px; -fx-border-color: #E0E0E0; -fx-border-radius: 5px;">
+                        <padding>
+                            <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+                        </padding>
+                        <!-- Titre et recherche -->
+                        <HBox alignment="CENTER_LEFT">
+                            <Label style="-fx-font-size: 18px; -fx-font-weight: bold;" text="Liste des traitements" />
+                            <Region HBox.hgrow="ALWAYS" />
+                            <HBox alignment="CENTER_RIGHT" HBox.hgrow="ALWAYS">
+                                <TextField fx:id="searchField" promptText="Recherche..." style="-fx-background-radius: 20px;">
+                                    <HBox.margin>
+                                        <Insets right="10.0" />
+                                    </HBox.margin>
+                                    <padding>
+                                        <Insets bottom="5.0" left="10.0" right="10.0" top="5.0" />
+                                    </padding>
+                                </TextField>
+                                <ImageView fitHeight="16.0" fitWidth="16.0" layoutX="50.0" preserveRatio="true" style="-fx-translate-x: -35;">
+                                    <Image url="@../resources/icons/Search.png" />
+                                </ImageView>
+                            </HBox> 
+                        </HBox>
+                        <TableView fx:id="tableTraitements" VBox.vgrow="ALWAYS">
+                            <columns>
+                                <TableColumn fx:id="checkboxColumn" prefWidth="50.0" text="">
+                                    <graphic>
+                                        <CheckBox fx:id="selectAllCheckbox" onAction="#handleSelectAllCheckbox" />
+                                    </graphic>
+                                </TableColumn>
+                                <TableColumn fx:id="nomColumn" prefWidth="150.0" style="-fx-alignment: CENTER;" text="Nom" />
+                                <TableColumn fx:id="typeColumn" prefWidth="150.0" style="-fx-alignment: CENTER;" text="Type" />
+                                <TableColumn fx:id="dateDebutColumn" prefWidth="150.0" style="-fx-alignment: CENTER;" text="Date de début" />
+                                <TableColumn fx:id="dateFinColumn" prefWidth="150.0" style="-fx-alignment: CENTER;" text="Date de fin" />
+                                <TableColumn fx:id="statutColumn" prefWidth="130.0" style="-fx-alignment: CENTER;" text="Statut" />
+                                <TableColumn fx:id="actionsColumn" prefWidth="100.0" style="-fx-alignment: CENTER;" text="Actions" />
+                            </columns>
+                            <VBox.margin>
+                                <Insets bottom="10.0" top="10.0" />
+                            </VBox.margin>
+                     <columnResizePolicy>
+                        <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+                     </columnResizePolicy>
+                        </TableView>
+                        <HBox alignment="CENTER" spacing="10">
+                            <Button fx:id="btnAjouterTraitement" onAction="#handleAddTraitement" styleClass="action-button" text="Ajouter traitement">
+                                <graphic>
+                                    <ImageView fitHeight="16" fitWidth="16" preserveRatio="true">
+                                        <Image url="@../resources/icons/Plus%20circle.png" />
+                                    </ImageView>
+                                </graphic>
+                                <padding>
+                                    <Insets bottom="10.0" left="15.0" right="15.0" top="10.0" />
+                                </padding>
+                            </Button>
+                            <Button fx:id="btnSupprimerTraitements" onAction="#handleDeleteTraitement" style="-fx-background-color: #F8F8F8; -fx-border-color: #CCCCCC; -fx-background-radius: 5px; -fx-border-radius: 5px;" text="Supprimer traitement(s)">
+                                <graphic>
+                                    <ImageView fitHeight="16" fitWidth="16" preserveRatio="true">
+                                        <Image url="@../resources/icons/Trash%202white.png" />
+                                    </ImageView>
+                                </graphic>
+                                <padding>
+                                    <Insets bottom="10.0" left="15.0" right="15.0" top="10.0" />
+                                </padding>
+                            </Button>
+                        </HBox>
+                    </VBox>
+                </VBox>
+            </VBox>
+            
+            <!-- Page des traitements - Formulaire d'ajout -->
+            <VBox fx:id="traitementsAddView" visible="false">
+                <HBox alignment="CENTER_LEFT" style="-fx-background-color: white; -fx-border-color: #E0E0E0; -fx-border-width: 0 0 1px 0;">
+                    <padding>
+                        <Insets bottom="10.0" left="20.0" right="20.0" top="10.0" />
+                    </padding>
+                    <Label style="-fx-font-size: 24px; -fx-font-weight: bold;" text="Traitements" />
+                    <Region HBox.hgrow="ALWAYS" />
+                </HBox>
+                <VBox style="-fx-background-color: #F8F8F8;" VBox.vgrow="ALWAYS">
+                    <padding>
+                        <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+                    </padding>
+                    <VBox style="-fx-background-color: white; -fx-background-radius: 5px; -fx-border-color: #E0E0E0; -fx-border-radius: 5px;">
+                        <padding>
+                            <Insets bottom="30.0" left="30.0" right="30.0" top="30.0" />
+                        </padding>
+                        <GridPane hgap="20" vgap="20">
+                            <columnConstraints>
+                                <ColumnConstraints percentWidth="50" />
+                                <ColumnConstraints percentWidth="50" />
+                            </columnConstraints>
+                            
+                            <Label text="Patient:" GridPane.columnIndex="0" GridPane.rowIndex="0" />
+                            <ComboBox fx:id="comboPatient" prefWidth="200.0" promptText="Sélectionner un patient" GridPane.columnIndex="0" GridPane.rowIndex="1" />
+                            
+                            <Label text="Type de traitement:" GridPane.columnIndex="1" GridPane.rowIndex="0" />
+                            <TextField fx:id="inputType" promptText="Type de traitement" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                            
+                            <Label text="Date de début:" GridPane.columnIndex="0" GridPane.rowIndex="2" />
+                            <DatePicker fx:id="inputDateDebut" prefWidth="200.0" promptText="JJ/MM/AAAA" GridPane.columnIndex="0" GridPane.rowIndex="3" />
+                            
+                            <Label text="Date de fin:" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                            <DatePicker fx:id="inputDateFin" prefWidth="200.0" promptText="JJ/MM/AAAA" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                            
+                            <Label text="Description:" GridPane.columnIndex="0" GridPane.columnSpan="2" GridPane.rowIndex="4" />
+                            <TextArea fx:id="inputDescription" prefHeight="100" promptText="Description du traitement" GridPane.columnIndex="0" GridPane.columnSpan="2" GridPane.rowIndex="5" />
+                            
+                            <rowConstraints>
+                               <RowConstraints />
+                               <RowConstraints />
+                               <RowConstraints />
+                               <RowConstraints />
+                               <RowConstraints />
+                               <RowConstraints />
+                            </rowConstraints>
+                        </GridPane>
+                        
+                        <HBox alignment="CENTER" spacing="10">
+                            <padding>
+                                <Insets top="30.0" />
+                            </padding>
+                            <Button fx:id="btnConfirmerAjout" onAction="#handleConfirmerAjoutClick" styleClass="confirm-button" text="Ajouter">
+                                <graphic>
+                                    <ImageView fitHeight="16" fitWidth="16" preserveRatio="true">
+                                        <Image url="@../resources/icons/Check.png" />
+                                    </ImageView>
+                                </graphic>
+                                <padding>
+                                    <Insets bottom="10.0" left="20.0" right="20.0" top="10.0" />
+                                </padding>
+                            </Button>
+                            <Button fx:id="btnAnnulerAjout" onAction="#handleAnnulerAjoutClick" styleClass="cancel-button" text="Annuler">
+                                <graphic>
+                                    <ImageView fitHeight="16" fitWidth="16" preserveRatio="true">
+                                        <Image url="@../resources/icons/X%20circle.png" />
+                                    </ImageView>
+                                </graphic>
+                                <padding>
+                                    <Insets bottom="10.0" left="20.0" right="20.0" top="10.0" />
+                                </padding>
+                            </Button>
+                        </HBox>
+                    </VBox>
+                </VBox>
+            </VBox>
+            
+            <!-- Page des Traitements - Formulaire de modification du Traitement -->
+            <VBox fx:id="modifierTraitementView">
+                <HBox alignment="CENTER_LEFT" style="-fx-background-color: white; -fx-border-color: #E0E0E0; -fx-border-width: 0 0 1px 0;">
+                    <padding>
+                        <Insets bottom="10.0" left="20.0" right="20.0" top="10.0" />
+                    </padding>
+                    <Label style="-fx-font-size: 24px; -fx-font-weight: bold;" text="Modifier un Traitement" />
+                    <Region HBox.hgrow="ALWAYS" />
+                </HBox>
+
+                <VBox style="-fx-background-color: #F8F8F8;" VBox.vgrow="ALWAYS">
+                    <padding>
+                        <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+                    </padding>
+                    <VBox style="-fx-background-color: white; -fx-background-radius: 5px; -fx-border-color: #E0E0E0; -fx-border-radius: 5px;">
+                        <padding>
+                            <Insets bottom="30.0" left="30.0" right="30.0" top="30.0" />
+                        </padding>
+
+                        <HBox alignment="CENTER_LEFT">
+                            <Label style="-fx-font-size: 16px; -fx-font-weight: bold;" text="ID du traitement: " />
+                            <Label fx:id="labelTraitementId" style="-fx-font-size: 16px;" text="[ID]" />
+                        </HBox>
+
+                        <GridPane hgap="20" vgap="20">
+                            <padding>
+                                <Insets top="20.0" />
+                            </padding>
+                            <columnConstraints>
+                                <ColumnConstraints percentWidth="50" />
+                                <ColumnConstraints percentWidth="50" />
+                            </columnConstraints>
+                            <rowConstraints>
+                                <RowConstraints />
+                                <RowConstraints />
+                                <RowConstraints />
+                                <RowConstraints />
+                                <RowConstraints />
+                                <RowConstraints />
+                                <RowConstraints />
+                                <RowConstraints />
+                        <RowConstraints />
+                        <RowConstraints />
+                            </rowConstraints>
+
+                            <Label text="Patient:" GridPane.columnIndex="0" GridPane.rowIndex="0" />
+                            <ComboBox fx:id="comboPatientModif" prefWidth="200.0" promptText="Sélectionner un patient" GridPane.columnIndex="0" GridPane.rowIndex="1" />
+
+                            <Label text="Posologie:" GridPane.columnIndex="0" GridPane.rowIndex="2" />
+                            <TextField fx:id="inputPosologieModif" promptText="Posologie du traitement" GridPane.columnIndex="0" GridPane.rowIndex="3" />
+
+                            <Label text="Type:" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                            <TextField fx:id="inputTypeModif" promptText="Type de traitement" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+
+                            <Label text="Date de début:" GridPane.columnIndex="0" GridPane.rowIndex="4" />
+                            <DatePicker fx:id="datePickerDebutModif" prefWidth="200.0" promptText="JJ/MM/AAAA" GridPane.columnIndex="0" GridPane.rowIndex="5" />
+
+                            <Label text="Date de fin:" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+                            <DatePicker fx:id="datePickerFinModif" prefWidth="200.0" promptText="JJ/MM/AAAA" GridPane.columnIndex="1" GridPane.rowIndex="5" />
+
+                            <Label text="Actif:" GridPane.columnIndex="0" GridPane.rowIndex="6" />
+                            <CheckBox fx:id="checkBoxActifModif" GridPane.columnIndex="0" GridPane.rowIndex="7" />
+
+                            <Label text="Description:" GridPane.columnIndex="0" GridPane.columnSpan="2" GridPane.rowIndex="8" />
+                            <TextArea fx:id="textAreaObservationsModif" prefHeight="100.0" promptText="Description du traitement..." wrapText="true" GridPane.columnIndex="0" GridPane.columnSpan="2" GridPane.rowIndex="9" />
+                        </GridPane>
+
+                        <HBox alignment="CENTER" spacing="10">
+                            <padding>
+                                <Insets top="30.0" />
+                            </padding>
+                            <Button fx:id="btnConfirmerModification" onAction="#handleConfirmerModificationClick" styleClass="confirm-button" text="Enregistrer">
+                                <graphic>
+                                    <ImageView fitHeight="16" fitWidth="16" preserveRatio="true">
+                                        <Image url="@../resources/icons/Check.png" />
+                                    </ImageView>
+                                </graphic>
+                                <padding>
+                                    <Insets bottom="10.0" left="20.0" right="20.0" top="10.0" />
+                                </padding>
+                            </Button>
+                            <Button fx:id="btnAnnulerModification" onAction="#handleAnnulerModificationClick" styleClass="cancel-button" text="Annuler">
+                                <graphic>
+                                    <ImageView fitHeight="16" fitWidth="16" preserveRatio="true">
+                                        <Image url="@../resources/icons/X%20circle.png" />
+                                    </ImageView>
+                                </graphic>
+                                <padding>
+                                    <Insets bottom="10.0" left="20.0" right="20.0" top="10.0" />
+                                </padding>
+                            </Button>
+                        </HBox>
+                    </VBox>
+                </VBox>
+            </VBox>
+        </StackPane>
+    </center>
+</BorderPane>

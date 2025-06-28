@@ -1,0 +1,237 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Region?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+
+<BorderPane prefHeight="700.0" prefWidth="1000.0" stylesheets="@../resources/css/GeneralStyle.css" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.StatistiquesController">
+    <!-- Menu latéral -->
+    <left>
+        <VBox prefWidth="220.0" spacing="5.0" style="-fx-background-color: white; -fx-border-color: #E0E0E0; -fx-border-width: 0 1px 0 0;" styleClass="sidebar">
+            <padding>
+                <Insets bottom="20.0" left="10.0" right="10.0" top="20.0" />
+            </padding>
+            
+            <Label style="-fx-font-size: 18px; -fx-font-weight: bold;" text="MediConnect">
+            <graphic>
+               <ImageView fitHeight="51.0" fitWidth="60.0" pickOnBounds="true" preserveRatio="true">
+                  <image>
+                     <Image url="@../resources/icons/MCAppLogo60x51_2.png" />
+                  </image>
+               </ImageView>
+            </graphic></Label>
+            
+            <Label style="-fx-font-size: 14px; -fx-text-fill: #777777;" text="Menu">
+                <VBox.margin>
+                    <Insets bottom="5.0" top="15.0" />
+                </VBox.margin>
+            </Label>
+            
+            <Button fx:id="btnAccueil" onAction="#handleAccueilClick" prefWidth="200.0" style="-fx-text-fill: black; -fx-background-color: white; -fx-alignment: CENTER-LEFT;" styleClass="menu-button" text="Accueil">
+                <graphic>
+                    <ImageView fitHeight="16" fitWidth="16" preserveRatio="true">
+                        <Image url="@../resources/icons/Home.png" />
+                    </ImageView>
+                </graphic>
+                <padding>
+                    <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                </padding>
+            </Button>
+            
+            <Button fx:id="btnPatients" onAction="#handlePatientsClick" prefWidth="200.0" style="-fx-text-fill: black; -fx-background-color: white; -fx-alignment: CENTER-LEFT;" styleClass="menu-button" text="Patients">
+                <graphic>
+                    <ImageView fitHeight="16" fitWidth="16" preserveRatio="true">
+                        <Image url="@../resources/icons/Users.png" />
+                    </ImageView>
+                </graphic>
+                <padding>
+                    <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                </padding>
+            </Button>
+            
+            <Button fx:id="btnTraitements" onAction="#handleTraitementsClick" prefWidth="200.0" style="-fx-text-fill: black; -fx-background-color: white; -fx-alignment: CENTER-LEFT;" styleClass="menu-button" text="Traitements">
+                <graphic>
+                    <ImageView fitHeight="16" fitWidth="16" preserveRatio="true">
+                        <Image url="@../resources/icons/List.png" />
+                    </ImageView>
+                </graphic>
+                <padding>
+                    <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                </padding>
+            </Button>
+            
+            <Button fx:id="btnRendezVous" onAction="#handleRendezVousClick" prefWidth="200.0" style="-fx-text-fill: black; -fx-background-color: white; -fx-alignment: CENTER-LEFT;" styleClass="menu-button" text="Rendez-vous">
+                <graphic>
+                    <ImageView fitHeight="16" fitWidth="16" preserveRatio="true">
+                        <Image url="@../resources/icons/Calendar.png" />
+                    </ImageView>
+                </graphic>
+                <padding>
+                    <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                </padding>
+            </Button>
+            
+            <Button fx:id="btnStatistiques" onAction="#handleStatistiquesClick" prefWidth="200.0" style="-fx-text-fill: black; -fx-background-color: #f0f0f0; -fx-alignment: CENTER-LEFT;" styleClass="menu-button-active" text="Statistiques">
+                <graphic>
+                    <ImageView fitHeight="16" fitWidth="16" preserveRatio="true">
+                        <Image url="@../resources/icons/Bar%20chart-2.png" />
+                    </ImageView>
+                </graphic>
+                <padding>
+                    <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                </padding>
+            </Button>
+            
+            <Label style="-fx-font-size: 14px; -fx-text-fill: #777777;" text="Aide et paramètres">
+                <VBox.margin>
+                    <Insets bottom="5.0" top="20.0" />
+                </VBox.margin>
+            </Label>
+            
+            <Button fx:id="btnParametres" onAction="#handleParametresClick" prefWidth="200.0" style="-fx-text-fill: black; -fx-background-color: white; -fx-alignment: CENTER-LEFT;" styleClass="menu-button" text="Paramètres">
+                <graphic>
+                    <ImageView fitHeight="16" fitWidth="16" preserveRatio="true">
+                        <Image url="@../resources/icons/Settings.png" />
+                    </ImageView>
+                </graphic>
+                <padding>
+                    <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                </padding>
+            </Button>
+            
+            <Button fx:id="btnAide" onAction="#handleAideClick" prefWidth="200.0" style="-fx-text-fill: black; -fx-background-color: white; -fx-alignment: CENTER-LEFT;" styleClass="menu-button" text="Aide">
+                <graphic>
+                    <ImageView fitHeight="16" fitWidth="16" preserveRatio="true">
+                        <Image url="@../resources/icons/Info.png" />
+                    </ImageView>
+                </graphic>
+                <padding>
+                    <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                </padding>
+            </Button>
+        </VBox>
+    </left>
+    
+    <!-- Contenu principal -->
+    <center>
+        <VBox style="-fx-background-color: #f8f9fa;">
+            <!-- En-tête -->
+            <HBox alignment="CENTER_LEFT" style="-fx-background-color: white; -fx-border-color: #E0E0E0; -fx-border-width: 0 0 1px 0;">
+                    <padding>
+                        <Insets bottom="10.0" left="20.0" right="20.0" top="10.0" />
+                    </padding>
+                    <Label style="-fx-font-size: 24px; -fx-font-weight: bold;" text="Statistiques" />
+                    <Region HBox.hgrow="ALWAYS" />
+            </HBox>
+            
+            <!-- Contenu des statistiques -->
+            <VBox spacing="20.0" style="-fx-background-color: #f8f9fa;">
+                <padding>
+                    <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+                </padding>
+                
+                <!-- Cartes de statistiques -->
+                <GridPane hgap="20.0" vgap="20.0">
+                    <columnConstraints>
+                        <ColumnConstraints percentWidth="25.0" />
+                        <ColumnConstraints percentWidth="25.0" />
+                        <ColumnConstraints percentWidth="25.0" />
+                        <ColumnConstraints percentWidth="25.0" />
+                    </columnConstraints>
+                    
+                    <!-- Carte 1 -->
+                    <VBox alignment="CENTER_LEFT" style="-fx-background-color: white; -fx-background-radius: 8px; -fx-border-radius: 8px; -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.05), 10, 0, 0, 4);" GridPane.columnIndex="0" GridPane.rowIndex="0">
+                        <padding>
+                            <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+                        </padding>
+                        <Label style="-fx-font-size: 14px; -fx-text-fill: #555555;" text="Nombre total de patients" />
+                        <Label fx:id="lblTotalPatients" style="-fx-font-size: 30px; -fx-font-weight: bold;" text="9,024" />
+                    </VBox>
+                    
+                    <!-- Carte 2 -->
+                    <VBox alignment="CENTER_LEFT" style="-fx-background-color: white; -fx-background-radius: 8px; -fx-border-radius: 8px; -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.05), 10, 0, 0, 4);" GridPane.columnIndex="1" GridPane.rowIndex="0">
+                        <padding>
+                            <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+                        </padding>
+                        <Label style="-fx-font-size: 14px; -fx-text-fill: #555555;" text="Traitements en cours" />
+                        <Label fx:id="lblTraitementsEnCours" style="-fx-font-size: 30px; -fx-font-weight: bold;" text="1,405" />
+                    </VBox>
+                    
+                    <!-- Carte 3 -->
+                    <VBox alignment="CENTER_LEFT" style="-fx-background-color: white; -fx-background-radius: 8px; -fx-border-radius: 8px; -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.05), 10, 0, 0, 4);" GridPane.columnIndex="2" GridPane.rowIndex="0">
+                        <padding>
+                            <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+                        </padding>
+                        <Label style="-fx-font-size: 14px; -fx-text-fill: #555555;" text="Traitements terminés" />
+                        <Label fx:id="lblTraitementsTermines" style="-fx-font-size: 30px; -fx-font-weight: bold;" text="8,353" />
+                    </VBox>
+                    
+                    <!-- Carte 4 -->
+                    <VBox alignment="CENTER_LEFT" style="-fx-background-color: white; -fx-background-radius: 8px; -fx-border-radius: 8px; -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.05), 10, 0, 0, 4);" GridPane.columnIndex="3" GridPane.rowIndex="0">
+                        <padding>
+                            <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+                        </padding>
+                        <Label style="-fx-font-size: 14px; -fx-text-fill: #555555;" text="Total de RDVs ce mois" />
+                        <Label fx:id="lblRdvMois" style="-fx-font-size: 30px; -fx-font-weight: bold;" text="26" />
+                    </VBox>
+               <rowConstraints>
+                  <RowConstraints />
+               </rowConstraints>
+                </GridPane>
+                
+                <!-- Graphiques -->
+                <GridPane hgap="20.0" vgap="20.0">
+                    <columnConstraints>
+                        <ColumnConstraints percentWidth="50.0" />
+                        <ColumnConstraints percentWidth="50.0" />
+                    </columnConstraints>
+
+                    <!-- Graphique types de traitements -->
+                    <VBox style="-fx-background-color: white; -fx-background-radius: 8px; -fx-border-radius: 8px; -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.05), 10, 0, 0, 4);" GridPane.columnIndex="0" GridPane.rowIndex="0">
+                        <padding>
+                            <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+                        </padding>
+
+                        <Label style="-fx-font-size: 16px; -fx-font-weight: bold;" text="Types de traitements fréquents">
+                            <VBox.margin>
+                                <Insets bottom="15.0" />
+                            </VBox.margin>
+                        </Label>
+
+                        <VBox fx:id="chartTypeTraitements" spacing="15.0" />
+                    </VBox>
+
+                    <!-- Graphique traitements par mois -->
+                    <VBox style="-fx-background-color: white; -fx-background-radius: 8px; -fx-border-radius: 8px; -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.05), 10, 0, 0, 4);" GridPane.columnIndex="1" GridPane.rowIndex="0">
+                        <padding>
+                            <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+                        </padding>
+
+                        <Label style="-fx-font-size: 16px; -fx-font-weight: bold;" text="Traitements par mois">
+                            <VBox.margin>
+                                <Insets bottom="15.0" />
+                            </VBox.margin>
+                        </Label>
+
+                        <StackPane fx:id="barChartContainer">
+                            <!-- The BarChart will be created in the controller -->
+                        </StackPane>
+                    </VBox>
+               <rowConstraints>
+                  <RowConstraints />
+               </rowConstraints>
+                </GridPane>
+            </VBox>
+        </VBox>
+    </center>
+</BorderPane>
